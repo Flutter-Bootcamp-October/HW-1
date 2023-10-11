@@ -171,9 +171,15 @@ void removePerson(List list, String n) {
   }
 }
 
-void sortAscending(List list) {}
+//Sort the List of Maps created above by age in ascending order
+void sortAscending(List list) {
+  list.sort((a, b) => a["age"].compareTo(b["age"]));
+}
 
-void sortDescending(List list) {}
+//Sort the List of Maps created above by name in descending order
+void sortDescending(List list) {
+  list.sort((b, a) => a["name"].compareTo(b["name"]));
+}
 
 void main(List<String> arguments) {
   List listNumber = [3, 6, 10, 9, 4, 30, 57, 1];
@@ -190,23 +196,26 @@ void main(List<String> arguments) {
   List listOfMaps = [
     {"name": "Alice", "age": 25},
     {"name": "Bob", "age": 30},
-    {"name": "Charlie", "age": 35}
+    {"name": "Raffal", "age": 26},
+    {"name": "Charlie", "age": 35},
   ];
-  printAll(listNumber);
-  print(sumALL(listNumber));
-  print(listMax(listNumber));
-  print(listMin(listNumber));
-  listEvens(listNumber);
-  printKeys(mapNumber);
-  printValues(mapNumber);
-  print(sumValues(mapNumber));
-  print(mapMax(mapNumber));
-  print(mapMin(mapNumber));
-  printNames(listOfMaps);
-  printAges(listOfMaps);
-  print(oldest(listOfMaps));
-  print(youngest(listOfMaps));
+  // printAll(listNumber);
+  // print(sumALL(listNumber));
+  // print(listMax(listNumber));
+  // print(listMin(listNumber));
+  // listEvens(listNumber);
+  // printKeys(mapNumber);
+  // printValues(mapNumber);
+  // print(sumValues(mapNumber));
+  // print(mapMax(mapNumber));
+  // print(mapMin(mapNumber));
+  // printNames(listOfMaps);
+  // printAges(listOfMaps);
+  // print(oldest(listOfMaps));
+  // print(youngest(listOfMaps));
   addPerson(listOfMaps, "David", 40);
-  removePerson(listOfMaps, "Charlie");
+  // removePerson(listOfMaps, "Charlie");
+  sortAscending(listOfMaps);
+  sortDescending(listOfMaps);
   print(listOfMaps);
 }
