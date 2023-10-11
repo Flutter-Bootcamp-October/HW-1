@@ -1,5 +1,3 @@
-import 'dart:math';
-
 void main() {
   List<int> list0 = [3, 6, 10, 9, 4, 30, 57, 1];
   Map<String, int> mapNumber = {
