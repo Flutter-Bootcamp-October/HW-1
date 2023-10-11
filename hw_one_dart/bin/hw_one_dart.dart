@@ -14,34 +14,33 @@ void printAll(List list) {
   // print("print done!");
 }
 
-void sumALL(List list) {
-  var listSum = 0;
+int sumALL(List list) {
+  int listSum = 0;
   for (int element in list) {
     listSum += element;
   }
-  print(listSum);
-  // print("sum done!");
+  return listSum;
 }
 
-void listMax(List list) {
+int listMax(List list) {
   int listMax = list[0];
   for (int element in list) {
     if (element > listMax) {
       listMax = element;
     }
   }
-  print(listMax);
+  return listMax;
   // print("max done!");
 }
 
-void listMin(List list) {
+int listMin(List list) {
   int listMin = list[0];
   for (int element in list) {
     if (element < listMin) {
       listMin = element;
     }
   }
-  print(listMin);
+  return listMin;
   // print("min done!");
 }
 
@@ -66,15 +65,15 @@ void printValues(Map map) {
   }
 }
 
-void sumValues(Map map) {
-  dynamic sum = 0;
-  for (var value in map.values) {
+int sumValues(Map map) {
+  int sum = 0;
+  for (int value in map.values) {
     sum += value;
   }
-  print(sum);
+  return sum;
 }
 
-void mapMax(Map map) {
+String mapMax(Map map) {
   var maxV;
   var maxK;
   bool notAssigned = true;
@@ -89,10 +88,10 @@ void mapMax(Map map) {
       maxK = element.key;
     }
   }
-  print(maxK);
+  return maxK;
 }
 
-void mapMin(Map map) {
+String mapMin(Map map) {
   var minV;
   var minK;
   bool notAssigned = true;
@@ -107,8 +106,74 @@ void mapMin(Map map) {
       minK = element.key;
     }
   }
-  print(minK);
+  return minK;
 }
+
+// listOfMaps methods:
+void printNames(List list) {
+  for (Map dict in list) {
+    print(dict["name"]);
+  }
+}
+
+void printAges(List list) {
+  for (Map dict in list) {
+    print(dict["age"]);
+  }
+}
+
+String oldest(List list) {
+  var maxName;
+  var maxAge;
+  bool notAssigned = true;
+  for (Map dict in list) {
+    if (notAssigned) {
+      maxName = dict["name"];
+      maxAge = dict["age"];
+      notAssigned = false;
+    }
+    if (dict["age"] > maxAge) {
+      maxName = dict["name"];
+      maxAge = dict["age"];
+    }
+  }
+  return maxName;
+}
+
+String youngest(List list) {
+  var minName;
+  var minAge;
+  bool notAssigned = true;
+  for (Map dict in list) {
+    if (notAssigned) {
+      minName = dict["name"];
+      minAge = dict["age"];
+      notAssigned = false;
+    }
+    if (dict["age"] < minAge) {
+      minName = dict["name"];
+      minAge = dict["age"];
+    }
+  }
+  return minName;
+}
+
+void addPerson(List list, String n, int a) {
+  list.add({"name": n, "age": a});
+}
+
+void removePerson(List list, String n) {
+  for (Map dict in list) {
+    if (dict["name"] == n) {
+      list.remove(dict);
+      break;
+    }
+  }
+}
+
+void sortAscending(List list) {}
+
+void sortDescending(List list) {}
 
 void main(List<String> arguments) {
   List listNumber = [3, 6, 10, 9, 4, 30, 57, 1];
@@ -128,13 +193,20 @@ void main(List<String> arguments) {
     {"name": "Charlie", "age": 35}
   ];
   printAll(listNumber);
-  sumALL(listNumber);
-  listMax(listNumber);
-  listMin(listNumber);
+  print(sumALL(listNumber));
+  print(listMax(listNumber));
+  print(listMin(listNumber));
   listEvens(listNumber);
   printKeys(mapNumber);
   printValues(mapNumber);
-  sumValues(mapNumber);
-  mapMax(mapNumber);
-  mapMin(mapNumber);
+  print(sumValues(mapNumber));
+  print(mapMax(mapNumber));
+  print(mapMin(mapNumber));
+  printNames(listOfMaps);
+  printAges(listOfMaps);
+  print(oldest(listOfMaps));
+  print(youngest(listOfMaps));
+  addPerson(listOfMaps, "David", 40);
+  removePerson(listOfMaps, "Charlie");
+  print(listOfMaps);
 }
