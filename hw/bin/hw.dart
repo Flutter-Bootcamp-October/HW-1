@@ -48,7 +48,7 @@ listSumAllElmint({required List<int> list1}) {
   for (var element in list1) {
     e = e + element;
   }
-  return"sum of number is :  $e";
+  return "sum of number is :  $e";
 }
 
 listOfMax({required List<int> list1}) {
@@ -58,7 +58,7 @@ listOfMax({required List<int> list1}) {
       max = list1[i];
     }
   }
-  return"max number is: $max";
+  return "max number is: $max";
 }
 
 listOfMin({required List<int> list1}) {
@@ -72,8 +72,13 @@ listOfMin({required List<int> list1}) {
 }
 
 listOfEven({required List<int> list1, int x = 5}) {
-  var even = list1.where((ev) => ev.isEven);
-  return even.toList();
+  for (var element = 0; element < list1.length;element++) {
+    if (list1[element] % 2 == 0) {
+      print(list1[element]);
+    }
+  }
+  // var even = list1.where((ev) => ev.isEven);
+  // return even.toList();
 }
 
 mapAllKey({required Map<String, int> mapnumber}) {
@@ -121,9 +126,9 @@ mapOfMin({required Map<String, int> mapnumber}) {
   //print(minm);
 }
 
- listmapName({required List listOfMap}) {
+listmapName({required List listOfMap}) {
   for (var element in listOfMap) {
-   print(element['name']);
+    print(element['name']);
   }
 }
 
@@ -140,7 +145,7 @@ listmapOld({required List listOfMap}) {
       maxm = element['age'];
     }
   }
-  return"the oldest person is: $maxm";
+  return "the oldest person is: $maxm";
 }
 
 listmapyoung({required List listOfMap}) {
@@ -150,7 +155,7 @@ listmapyoung({required List listOfMap}) {
       maxm = element['age'];
     }
   }
-   return"the youngest person is: $maxm";
+  return "the youngest person is: $maxm";
 }
 
 listMapAdd({required List listOfMap}) {
@@ -165,7 +170,7 @@ listMapRemove({required List listOfMap}) {
 
 listMapAsc({required List listOfMap}) {
   listOfMap.sort((a, b) => b['age'].compareTo(a['age']));
- return listOfMap;
+  return listOfMap;
 }
 
 listMapDesc({required List listOfMap}) {
