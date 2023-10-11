@@ -90,6 +90,7 @@ mapAllValue({required Map<String, int> mapnumber}) {
 
 mapOfSum({required Map<String, int> mapnumber}) {
   var e = mapnumber.values;
+
   var sum = 0;
   for (var element in e) {
     sum = sum + element;
