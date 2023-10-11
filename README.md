@@ -7,7 +7,7 @@ Write a dart code that implements the following instructions, and write each par
 ## List:
 
 ```dart
-  List listNumber = [3,6,10,9,4,30.57.1];
+  List listNumber = [3,6,10,9,4,30,57,1];
 ```
 
 1. Print all the elements of a given list using a for loop.
