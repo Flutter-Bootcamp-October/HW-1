@@ -72,13 +72,13 @@ listOfMin({required List<int> list1}) {
 }
 
 listOfEven({required List<int> list1, int x = 5}) {
-  for (var element = 0; element < list1.length;element++) {
-    if (list1[element] % 2 == 0) {
-      print(list1[element]);
+  var list = [];
+  for (var element = 0; element < list1.length; element++) {
+    if (list1[element].isEven) {
+      list.add(list1[element]);
     }
   }
-  // var even = list1.where((ev) => ev.isEven);
-  // return even.toList();
+  return list.toList();
 }
 
 mapAllKey({required Map<String, int> mapnumber}) {
