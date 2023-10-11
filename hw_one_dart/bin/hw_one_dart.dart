@@ -2,6 +2,7 @@
 
 import 'package:hw_one_dart/hw_one_dart.dart' as hw_one_dart;
 
+// list methods:
 /*
   this function prints all elements in the given list
   parameter: List list
@@ -52,11 +53,88 @@ void listEvens(List list) {
   }
 }
 
+// map methods:
+void printKeys(Map map) {
+  for (var key in map.keys) {
+    print(key);
+  }
+}
+
+void printValues(Map map) {
+  for (var value in map.values) {
+    print(value);
+  }
+}
+
+void sumValues(Map map) {
+  dynamic sum = 0;
+  for (var value in map.values) {
+    sum += value;
+  }
+  print(sum);
+}
+
+void mapMax(Map map) {
+  var maxV;
+  var maxK;
+  bool notAssigned = true;
+  for (var element in map.entries) {
+    if (notAssigned) {
+      maxV = element.value;
+      maxK = element.key;
+      notAssigned = false;
+    }
+    if (element.value > maxV) {
+      maxV = element.value;
+      maxK = element.key;
+    }
+  }
+  print(maxK);
+}
+
+void mapMin(Map map) {
+  var minV;
+  var minK;
+  bool notAssigned = true;
+  for (var element in map.entries) {
+    if (notAssigned) {
+      minV = element.value;
+      minK = element.key;
+      notAssigned = false;
+    }
+    if (element.value < minV) {
+      minV = element.value;
+      minK = element.key;
+    }
+  }
+  print(minK);
+}
+
 void main(List<String> arguments) {
   List listNumber = [3, 6, 10, 9, 4, 30, 57, 1];
+  Map mapNumber = {
+    "One": 3,
+    "two": 6,
+    "three": 10,
+    "four": 9,
+    "five": 4,
+    "six": 30,
+    "seven": 57,
+    "eight": 1
+  };
+  List listOfMaps = [
+    {"name": "Alice", "age": 25},
+    {"name": "Bob", "age": 30},
+    {"name": "Charlie", "age": 35}
+  ];
   printAll(listNumber);
   sumALL(listNumber);
   listMax(listNumber);
   listMin(listNumber);
   listEvens(listNumber);
+  printKeys(mapNumber);
+  printValues(mapNumber);
+  sumValues(mapNumber);
+  mapMax(mapNumber);
+  mapMin(mapNumber);
 }
