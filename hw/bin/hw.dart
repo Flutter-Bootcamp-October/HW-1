@@ -15,7 +15,7 @@ void main() {
     {"name": "Alice", "age": 25},
     {"name": "Charlie", "age": 35}
   ];
-  print(listAllElmint(list1: list0));
+  listAllElmint(list1: list0);
   print(listSumAllElmint(list1: list0));
   print(listOfMax(list1: list0));
   print(listOfMin(list1: list0));
@@ -27,8 +27,8 @@ void main() {
   print(mapOfMax(mapnumber: mapNumber));
   print(mapOfMin(mapnumber: mapNumber));
   print("==========================================");
-  print(listmapName(listOfMap: listOfMaps));
-  print(listmapAge(listOfMap: listOfMaps));
+  listmapName(listOfMap: listOfMaps);
+  listmapAge(listOfMap: listOfMaps);
   print(listmapOld(listOfMap: listOfMaps));
   print(listmapyoung(listOfMap: listOfMaps));
   print(listMapAdd(listOfMap: listOfMaps));
@@ -37,7 +37,7 @@ void main() {
   print(listMapDesc(listOfMap: listOfMaps));
 }
 
-listAllElmint({required List<int> list1}) {
+void listAllElmint({required List<int> list1}) {
   for (var element in list1) {
     print(element);
   }
@@ -126,13 +126,13 @@ mapOfMin({required Map<String, int> mapnumber}) {
   //print(minm);
 }
 
-listmapName({required List listOfMap}) {
+void listmapName({required List listOfMap}) {
   for (var element in listOfMap) {
     print(element['name']);
   }
 }
 
-listmapAge({required List listOfMap}) {
+void listmapAge({required List listOfMap}) {
   for (var element in listOfMap) {
     print(element['age']);
   }
