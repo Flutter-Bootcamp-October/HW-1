@@ -7,7 +7,8 @@ void main(List<String> arguments) {
   List listNumber = [3, 6, 10, 9, 4, 30, 57, 1];
 
   printAllElement(listNumber);
-  sumAllElement(listNumber);
+  var result = sumAllElement(listNumber);
+  print(result);
   maxElement(listNumber);
   minElement(listNumber);
   evenElement(listNumber);
@@ -72,13 +73,13 @@ printAllElement(List list) {
 }
 
 // 2. Calculate the sum of all the elements in a given list using a for loop.
-sumAllElement(List list) {
+String sumAllElement(List list) {
   int sum = 0;
   for (int numbers in list) {
     sum += numbers;
   }
 
-  print("The sum of all element : $sum");
+  return "The sum of all element : $sum";
 }
 
 // 3. Find the maximum element in a given list using a for loop.
