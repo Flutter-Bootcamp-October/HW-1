@@ -78,7 +78,7 @@ sumAllElement(List list) {
     sum += numbers;
   }
 
-  return print("The sum of all element : $sum");
+  print("The sum of all element : $sum");
 }
 
 // 3. Find the maximum element in a given list using a for loop.
@@ -89,7 +89,7 @@ maxElement(List list) {
       max = list[i];
     }
   }
-  return print("The maximum element is : $max");
+  print("The maximum element is : $max");
 }
 
 // 4. Find the minimum element in a given list using a for loop.
@@ -100,7 +100,7 @@ minElement(List list) {
       min = list[i];
     }
   }
-  return print("The minimum element is : $min");
+  print("The minimum element is : $min");
 }
 
 // 5. Print all the even elements of a given list using a for loop.
@@ -144,7 +144,7 @@ sumAllValues(Map map) {
   for (int value in values) {
     sum += value;
   }
-  return print("The sum of all values : $sum");
+  print("The sum of all values : $sum");
 }
 
 // 4. Find the key associated with the maximum value in a given map using a for loop.
@@ -156,7 +156,7 @@ maxValue(Map map) {
       max = values[i];
     }
   }
-  return print("The maximum value is : $max");
+  print("The maximum value is : $max");
 }
 
 // 5. Find the key associated with the minimum value in a given map using a for loop.
@@ -168,7 +168,7 @@ minValue(Map map) {
       min = values[i];
     }
   }
-  return print("The minimum value is : $min");
+  print("The minimum value is : $min");
 }
 
 //*                                    List Of Map                                    */
@@ -200,7 +200,7 @@ printOldestAge(List list) {
       old = list[i]['age'];
     }
   }
-  return print("\nThe Oldest person : $old");
+  print("\nThe Oldest person : $old");
 }
 
 // 4. Find the youngest person in the List of Maps created above using a for loop.
@@ -211,7 +211,7 @@ printYoungestAge(List list) {
       young = list[i]['age'];
     }
   }
-  return print("The Youngest person : $young");
+  print("The Youngest person : $young");
 }
 
 // 5. Add a new person to the List of Maps created above. The new person should have the name "David" and age 40.
